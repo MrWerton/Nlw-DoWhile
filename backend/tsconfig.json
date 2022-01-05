@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+  
+    "target": "es2017",                                
+    "module": "commonjs",                       
+    "strict": false,                          
+     "esModuleInterop": true,                       
+    "skipLibCheck": true,                          
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["./src/@types", "./node_modules/@types"]    //avisa o java script sobre os types 
+  }
+}

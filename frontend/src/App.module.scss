@@ -1,0 +1,17 @@
+.contentWrapper{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 453px;
+  counter-reset: 120px;
+  position: relative;
+}
+@media screen and (max-width: 740px) {
+  .contentWrapper{
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    align-items: center;
+    justify-content:center;
+    gap: 10;
+  }
+} 

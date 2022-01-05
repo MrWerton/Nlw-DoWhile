@@ -1,0 +1,29 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+//Criar o modelo
+model User{
+  id          String @id @default(uuid())
+  name        String //option name     string?
+  github_id   Int
+  avatar_url  String
+  login       String
+
+  messages Message[] //varios para varios
+  @@map("users") //nome da tabela -- rode o yarn prisma migrate dev
+}
+
+model Message{
+  id          String @id @default(uuid())
+  text        String //option name     string?
+  created_At  DateTime @default(now())
+
+  user User @relation(fields: [user_id], references: [id]) //fax a  referencia com a tabela user
+  user_id String
+  @@map("messages")
+}
